@@ -20,11 +20,11 @@ module.exports = async request => {
   try {
     let s3Return = await s3.getObject(params);
     console.dir({
-      status: success,
+      status: 'success',
       return: s3Return
-    })
+    });
   } catch (error) {
-    console.error(error.message, event);
+    console.error(error.message);
   }
 
   // let response = {
