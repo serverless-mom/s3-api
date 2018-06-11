@@ -3,7 +3,7 @@ module.exports = async request => {
   console.dir(request);
 
   // Get the message sent in the endpoint path parameter
-  let message = request.pathParameters.message;
+  let message = request.pathParameters.fileId;
 
   // Build a response.
   let responseBody = `
