@@ -3,7 +3,7 @@ const s3 = new AWS.S3();
 
 
 module.exports = async request => {
-  const ports = JSON.parse(process.env.STACKERY_PORTS)
+  const ports = JSON.parse(process.env.STACKERY_PORTS);
 
   // Log the request to the console.
   console.dir(request);
@@ -21,7 +21,7 @@ module.exports = async request => {
     let s3Return = await s3.getObject(params);
     console.dir({
       status: 'success',
-      return: s3Return
+      return: s3Return.Body
     });
   } catch (error) {
     console.error(error.message);
