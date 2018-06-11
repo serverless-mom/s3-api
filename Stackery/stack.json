@@ -5,13 +5,14 @@
       "type": "function",
       "x": 400,
       "y": 285,
-      "name": "Echo",
+      "name": "StoreOnS3",
       "outputs": 1,
       "memorySize": 128,
       "timeout": 30,
       "runtime": "nodejs8",
       "location": "inline",
       "envVars": {},
+      "entryPoint": "",
       "wires": [
         [
           "b82ccc52"
@@ -32,7 +33,7 @@
       "x": 195,
       "y": 285,
       "name": "",
-      "path": "/{message}",
+      "path": "/{fileId}",
       "method": "GET",
       "wires": [
         [
