@@ -3,6 +3,8 @@ const s3 = new AWS.S3();
 
 
 module.exports = async request => {
+  const ports = JSON.parse(process.env.STACKERY_PORTS)
+
   // Log the request to the console.
   console.dir(request);
 
