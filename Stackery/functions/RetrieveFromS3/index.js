@@ -24,7 +24,7 @@ module.exports = async request => {
       return: s3Return
     })
   } catch (error) {
-    console.error(error.message, event);
+    console.error(error.message);
   }
 
   // let response = {
