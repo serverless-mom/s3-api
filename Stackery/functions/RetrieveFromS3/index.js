@@ -17,6 +17,7 @@ module.exports = async request => {
     Bucket: ports[0][0].bucket
   };
   let responseBody = 'default body';
+  console.log (params);
 
 
   const s3Return = await s3.getObject(params, (error) =>{
