@@ -21,10 +21,8 @@ module.exports = async request => {
   try {
     let s3Return = await s3.getObject(params);
     responseBody = s3Return.data;
-    console.dir({
-      status: 'success',
-      return: responseBody
-    });
+    console.dir(s3Return);
+    console.dir(s3Return.Body.toString());
   } catch (error) {
     console.error(error.message);
   }
@@ -32,10 +30,14 @@ module.exports = async request => {
   let response = {
     statusCode: 200,
     headers: {
-      'Content-Type': 'text/html'
+      'Content-Type': 'application/json'
     },
     body: responseBody
   };
 
-  return response;
+  if (responseBody){
+    return response;
+  }else{
+    return {};
+  }
 };
