@@ -20,7 +20,7 @@ module.exports = async request => {
 
   try {
     let s3Return = await s3.getObject(params);
-    responseBody = s3Return.Body;
+    responseBody = s3Return;
     console.dir({
       status: 'success',
       return: responseBody
@@ -37,7 +37,5 @@ module.exports = async request => {
     body: responseBody
   };
 
-  return {
-    response
-  };
+  return response;
 };
