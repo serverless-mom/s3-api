@@ -16,15 +16,15 @@ module.exports = async request => {
     Key: `${fileId}.txt`,
     Bucket: ports[0][0].bucket
   };
-  let responseBody = '';
+  let responseBody = 'default body';
 
-  try {
-    let s3Return = await s3.getObject(params);
-    responseBody = 'my name is edgar';
-    console.log(s3Return);
-  } catch (error) {
+
+  const s3Return = await s3.getObject(params, (error) =>{
     console.error(error.message);
-  }
+  });
+  console.log(s3Return);
+  if(s3Return.Body){console.log(s3Return.Body);}
+
 
   let response = {
     statusCode: 200,
