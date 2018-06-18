@@ -20,8 +20,8 @@ module.exports = async request => {
 
   try {
     let s3Return = await s3.getObject(params);
-    responseBody = s3Return.data;
-    console.dir(s3Return);
+    responseBody = s3Return.Body.toString();
+    console.log(s3Return);
     console.dir(s3Return.Body.toString());
   } catch (error) {
     console.error(error.message);
